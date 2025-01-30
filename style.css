@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('images/vice city.jpg') no-repeat center center/cover;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Контейнер для кнопки */
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: auto; /* Прижимает кнопку вниз */
+    padding-bottom: 20px; /* Отступ от футера */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e9539d;
+    color: white;
+    font-size: 22px;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(255, 0, 85, 0.6);
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #FF3385;
+    box-shadow: 0 8px 20px rgba(255, 0, 85, 0.8);
+}
+
+.btn:active {
+    background-color: #FF0055;
+    box-shadow: 0 4px 10px rgba(255, 0, 85, 0.5);
+}
+
+footer {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 22px;
+        padding: 15px;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
