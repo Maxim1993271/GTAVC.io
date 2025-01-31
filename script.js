@@ -1,16 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Скрипт для кнопки возврата наверх
-    const backToTopButton = document.getElementById("back-to-top");
-
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 200) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
-        }
+    // Отключение контекстного меню (правая кнопка мыши)
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
     });
 
-    backToTopButton.addEventListener("click", function() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+    // Предотвращение копирования контента
+    document.addEventListener('copy', function(e) {
+        alert('Копирование контента запрещено!');
+        e.preventDefault();
     });
+
+    // Скрипт обновления часов
+    function updateClock() {
+        let now = new Date();
+        let hours = now.getHours().toString().padStart(2, '0');
+        let minutes = now.getMinutes().toString().padStart(2, '0');
+        document.getElementById('clock').textContent = `${hours}:${minutes}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
 });
