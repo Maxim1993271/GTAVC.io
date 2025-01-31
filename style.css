@@ -119,6 +119,18 @@ footer {
     z-index: 1000;
 }
 
+.armor::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 32px;
+    background-color: #b8b8b8; /* Серебристый цвет */
+    clip-path: polygon(50% 0%, 100% 30%, 85% 100%, 15% 100%, 0% 30%); /* Форма щита */
+    margin-right: 10px;
+    border: 2px solid white; /* Белая рамка */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Легкое свечение */
+}
+
 .stat {
     font-family: 'Pricedown', sans-serif;
     font-size: 24px;

@@ -7,7 +7,7 @@
     <meta name="author" content="Your Name or Team">
     
     <title>GTA Vice City Nextgen Edition</title>
-	<link rel="icon" href="images/Icon.ico" type="image/x-icon">
+    <link rel="icon" href="images/Icon.ico" type="image/x-icon">
     
     <!-- Подключаем внешний CSS -->
     <link rel="stylesheet" href="style.css"> 
@@ -20,28 +20,19 @@
     <!-- Часы -->
     <div class="clock" id="clock">00:00</div>
 
-<!-- Показатели (деньги, броня, здоровье) -->
-<div class="stats">
-    <div class="stat money" id="money">
-        <span>$999999999</span>
-    </div>
-    <div class="stat-group">
-        <div class="stat armor" id="armor">
-            <span>200</span>
-        </div>
-        <div class="stat health" id="health">
-            <span>200</span>
+    <!-- Показатели (деньги, броня, здоровье) -->
+    <div class="stats">
+        <div class="stat money" id="money">$999999999</div>
+        <div class="stat-group">
+            <div class="stat armor" id="armor">200</div>
+            <div class="stat health" id="health">200</div>
         </div>
     </div>
-</div>
 
     <!-- Звезды розыска -->
-    <div class="stars">
-        <!-- Звезды будут добавляться с помощью JS -->
-    </div>
+    <div class="stars" id="stars"></div>
 
-    <div class="content">
-    </div>
+    <div class="content"></div>
 
     <div class="button-wrapper">
         <a href="files/GTAVCNE_EN_RU.torrent" class="btn" download aria-label="Скачать торрент GTA Vice City Nextgen Edition">Download GTAVCNE Torrent</a>
@@ -55,48 +46,47 @@
         &copy; 2025 GTA Vice City Nextgen Edition. All rights reserved.
     </footer>
 
-    <!-- Скрипт обновления часов -->
+    <!-- Скрипты -->
     <script>
+        // Обновление часов
         function updateClock() {
-            let now = new Date();
+            const now = new Date();
             let hours = now.getHours().toString().padStart(2, '0');
             let minutes = now.getMinutes().toString().padStart(2, '0');
             document.getElementById('clock').textContent = `${hours}:${minutes}`;
         }
-
         setInterval(updateClock, 1000);
         updateClock();
-    </script>
 
-    <!-- Скрипт для добавления и управления звездами -->
-    <script>
+        // Динамическое изменение денег, брони и здоровья (пример)
+        function updateStats() {
+            document.getElementById('money').textContent = `$${Math.floor(Math.random() * 999999999)}`;
+            document.getElementById('armor').textContent = Math.floor(Math.random() * 200);
+            document.getElementById('health').textContent = Math.floor(Math.random() * 200);
+        }
+        setInterval(updateStats, 5000); // Обновление каждые 5 секунд (можно отключить)
+
+        // Управление звездами розыска
         let wantedLevel = 0;
-
-        // Функция для обновления звезд
         function updateStars() {
-            const stars = document.querySelector('.stars');
-            stars.innerHTML = ''; // Очищаем старые звезды
+            const starsContainer = document.getElementById('stars');
+            starsContainer.innerHTML = '';
             for (let i = 0; i < wantedLevel; i++) {
                 const star = document.createElement('span');
                 star.classList.add('star');
-                star.textContent = '*'; // Символ звезды
-                stars.appendChild(star);
+                star.textContent = '★';
+                starsContainer.appendChild(star);
             }
         }
-
-        // Функция для увеличения уровня розыска
         function increaseWantedLevel() {
-            if (wantedLevel < 6) {  // Максимум 6 звезд
+            if (wantedLevel < 6) {
                 wantedLevel++;
                 updateStars();
             }
         }
-
-        // Пример: увеличиваем уровень розыска через 2 секунды
         setTimeout(increaseWantedLevel, 2000);
-
-        // Пример: увеличиваем уровень розыска каждые 3 секунды
         setInterval(increaseWantedLevel, 3000);
     </script>
+
 </body>
 </html>
