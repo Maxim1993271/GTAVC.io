@@ -34,10 +34,16 @@
 
     <div class="content"></div>
 
-    <!-- Кнопка Play для MP3 -->
+    <!-- Кнопка Play для MP3 и микшер громкости -->
     <div class="play-button">
         <button class="btn-play" onclick="togglePlay()">Play Music</button>
         <audio id="audioPlayer" src="music/Malibu.mp3"></audio> <!-- Укажите путь к вашему MP3 файлу -->
+
+        <!-- Микшер громкости -->
+        <div class="volume-control">
+		<label for="volume">Volume:</label>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="1" onchange="updateVolume()">
+        </div>
     </div>
 
     <div class="button-wrapper">
@@ -63,7 +69,14 @@
                 audio.pause(); // Поставить на паузу
             }
         }
-        
+
+        // Обновление громкости
+        function updateVolume() {
+            var audio = document.getElementById('audioPlayer');
+            var volume = document.getElementById('volume').value;
+            audio.volume = volume;
+        }
+
         // Обновление часов
         function updateClock() {
             const now = new Date();
