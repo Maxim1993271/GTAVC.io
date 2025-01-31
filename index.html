@@ -34,14 +34,29 @@
 
     <div class="content"></div>
 
-    <!-- Кнопка Play для MP3 и микшер громкости -->
-    <div class="play-button">
+    <!-- Объединенная кнопка Play и микшер громкости -->
+    <div class="play-volume-control">
         <button class="btn-play" onclick="togglePlay()">Play Music</button>
-        <audio id="audioPlayer" src="music/Fever 105 Grand Theft Auto Vice City LU 1080p   West Side   West Coast Music Radio Live   GTA 4 RnB.mp3"></audio> <!-- Укажите путь к вашему MP3 файлу -->
+        <audio id="audioPlayer" src="music/EMOTION.mp3"></audio> <!-- Изначальный трек -->
+
+        <!-- Выбор трека -->
+        <div class="track-selector">
+            <label for="trackSelect">Select Track:</label>
+            <select id="trackSelect" onchange="changeTrack()">
+                <option value="music/EMOTION.mp3">EMOTION</option>
+                <option value="music/ESPANT.mp3">ESPANT</option>
+                <option value="music/FEVER.mp3">FEVER</option>
+                <option value="music/FLASH.mp3">FLASH</option>
+                <option value="music/KCHAT.mp3">KCHAT</option>
+                <option value="music/VCPR.mp3">VCPR</option>
+                <option value="music/VROCK.mp3">VROCK</option>
+                <option value="music/WAVE.mp3">WAVE</option>
+            </select>
+        </div>
 
         <!-- Микшер громкости -->
         <div class="volume-control">
-		<label for="volume">Volume:</label>
+            <label for="volume">Volume:</label>
             <input type="range" id="volume" min="0" max="1" step="0.01" value="1" onchange="updateVolume()">
         </div>
     </div>
@@ -68,6 +83,15 @@
             } else {
                 audio.pause(); // Поставить на паузу
             }
+        }
+
+        // Функция для изменения трека
+        function changeTrack() {
+            var audio = document.getElementById('audioPlayer');
+            var trackSelect = document.getElementById('trackSelect');
+            var selectedTrack = trackSelect.value;
+            audio.src = selectedTrack; // Меняем источник на выбранный трек
+            audio.play(); // Начинаем воспроизведение нового трека
         }
 
         // Обновление громкости

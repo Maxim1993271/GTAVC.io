@@ -270,6 +270,7 @@ footer {
 .btn-play {
     animation: pulse 1.5s infinite;
 }
+
 /* Стили для кнопки воспроизведения MP3 */
 .play-button {
     position: fixed;
@@ -321,4 +322,68 @@ footer {
 
 .btn-play {
     animation: pulse 1.5s infinite; /* Пульсация для кнопки */
+}
+/* Контейнер для кнопки Play и микшера громкости */
+.play-volume-control {
+    position: fixed;
+    bottom: 20px; /* Располагаем блок внизу */
+    left: 20px; /* Отступ от левого края */
+    text-align: left; /* Выравнивание по левому краю */
+    display: flex;
+    flex-direction: column; /* Элементы будут располагаться вертикально */
+    gap: 15px; /* Добавляем отступ между элементами */
+    width: 250px; /* Ограничиваем ширину блока */
+}
+
+/* Стили для кнопки Play Music */
+.btn-play {
+    background: linear-gradient(45deg, #ff00ff, #ff66ff); /* Градиентный фон */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px; /* Закругленные углы */
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.5);
+    transition: all 0.3s ease, transform 0.1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-play:hover {
+    background: linear-gradient(45deg, #ff66ff, #ff00ff); /* Инвертированный градиент на ховер */
+    transform: scale(1.1) rotate(5deg); /* Эффект увеличения и поворота */
+    box-shadow: 0 8px 30px rgba(255, 0, 255, 0.7); /* Увеличение тени */
+}
+
+.btn-play:active {
+    transform: scale(0.95) rotate(0deg); /* Легкое сжатие при нажатии */
+}
+
+/* Стили для выборки трека */
+.track-selector {
+    margin-top: 10px;
+}
+
+#trackSelect {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+
+/* Стили для микшера громкости */
+.volume-control {
+    margin-top: 10px;
+}
+
+#volume {
+    width: 100%; /* Чтобы ползунок занимал всю ширину */
+    margin-top: 5px;
 }
