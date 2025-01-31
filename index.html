@@ -6,25 +6,10 @@
     <meta name="description" content="GTA Vice City Nextgen Edition – Скачайте торрент для GTA Vice City Nextgen Edition для ПК. Бесплатно и без регистрации.">
     <meta name="author" content="Your Name or Team">
     
-    <!-- Open Graph метатеги -->
-    <meta property="og:title" content="GTA Vice City Nextgen Edition">
-    <meta property="og:description" content="Скачайте торрент для GTA Vice City Nextgen Edition бесплатно.">
-    <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta property="og:type" content="website">
-
     <title>GTA Vice City Nextgen Edition</title>
-    
-    <!-- Фавиконы -->
-    <link rel="icon" href="images/Icon.ico" type="image/x-icon">
-    <link rel="icon" href="images/Icon-16x16.png" sizes="16x16">
-    <link rel="icon" href="images/Icon-32x32.png" sizes="32x32">
-    <link rel="icon" href="images/Icon-48x48.png" sizes="48x48">
-    <link rel="icon" href="images/Icon-64x64.png" sizes="64x64">
     
     <!-- Подключаем внешний CSS -->
     <link rel="stylesheet" href="style.css"> 
-
 </head>
 <body>
     <header>
@@ -34,14 +19,34 @@
     <!-- Часы -->
     <div class="clock" id="clock">00:00</div>
 
+<!-- Показатели (деньги, броня, здоровье) -->
+<div class="stats">
+    <div class="stat money" id="money">
+        <span>$999999999</span>
+    </div>
+    <div class="stat-group">
+        <div class="stat armor" id="armor">
+            <span>200</span>
+        </div>
+        <div class="stat health" id="health">
+            <span>200</span>
+        </div>
+    </div>
+</div>
+
+    <!-- Звезды розыска -->
+    <div class="stars">
+        <!-- Звезды будут добавляться с помощью JS -->
+    </div>
+
     <div class="content">
     </div>
 
     <div class="button-wrapper">
         <a href="files/GTAVCNE_EN_RU.torrent" class="btn" download aria-label="Скачать торрент GTA Vice City Nextgen Edition">Download GTAVCNE Torrent</a>
     </div>
-	
-	<div class="button-wrapper">
+    
+    <div class="button-wrapper">
         <a href="https://drive.google.com/file/d/1oFUMxvug-CiE5peKdpptLMjeGc9ESyCh/view?usp=drive_link" class="btn" download aria-label="Скачать торрент GTA Vice City Nextgen Edition">Download GTAVCNE Google Drive</a>
     </div>
 
@@ -62,7 +67,35 @@
         updateClock();
     </script>
 
-    <!-- Подключаем JS файл -->
-    <script src="script.js"></script>
+    <!-- Скрипт для добавления и управления звездами -->
+    <script>
+        let wantedLevel = 0;
+
+        // Функция для обновления звезд
+        function updateStars() {
+            const stars = document.querySelector('.stars');
+            stars.innerHTML = ''; // Очищаем старые звезды
+            for (let i = 0; i < wantedLevel; i++) {
+                const star = document.createElement('span');
+                star.classList.add('star');
+                star.textContent = '*'; // Символ звезды
+                stars.appendChild(star);
+            }
+        }
+
+        // Функция для увеличения уровня розыска
+        function increaseWantedLevel() {
+            if (wantedLevel < 6) {  // Максимум 6 звезд
+                wantedLevel++;
+                updateStars();
+            }
+        }
+
+        // Пример: увеличиваем уровень розыска через 2 секунды
+        setTimeout(increaseWantedLevel, 2000);
+
+        // Пример: увеличиваем уровень розыска каждые 3 секунды
+        setInterval(increaseWantedLevel, 3000);
+    </script>
 </body>
 </html>

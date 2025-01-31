@@ -1,3 +1,4 @@
+/* Основные стили для body */
 body {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ body {
     flex-direction: column;
 }
 
+/* Стили для header */
 header {
     background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
@@ -17,6 +19,7 @@ header {
     font-weight: bold;
 }
 
+/* Основной контент */
 .content {
     flex-grow: 1;
     display: flex;
@@ -35,6 +38,7 @@ header {
     padding-bottom: 20px; /* Отступ от футера */
 }
 
+/* Стили для кнопки */
 .btn {
     display: inline-block;
     background-color: #e9539d;
@@ -59,6 +63,7 @@ header {
     box-shadow: 0 4px 10px rgba(255, 0, 85, 0.5);
 }
 
+/* Стили для footer */
 footer {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.6);
@@ -66,6 +71,7 @@ footer {
     padding: 10px;
 }
 
+/* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
     header {
         font-size: 22px;
@@ -82,20 +88,130 @@ footer {
     }
 }
 
+/* Подключение шрифта Pricedown */
 @font-face {
     font-family: 'Pricedown';
     src: url('pricedown.ttf') format('truetype'); /* Подключаем шрифт GTA */
 }
 
+/* Стили для часов */
 .clock {
     font-family: 'Pricedown', sans-serif;
     font-size: 40px;
     color: #56b8f7;
     text-shadow: 2px 2px 5px black;
     position: absolute;
-    top: 80px; /* Было 20px, теперь 50px */
+    top: 80px;
     right: 20px;
     background: rgba(0, 0, 0, 0.5);
     padding: 10px 15px;
     border-radius: 5px;
+}
+
+/* Стили для показателей (деньги, броня, здоровье) */
+.stats {
+    position: absolute;
+    top: 180px;  /* Расположение сразу после часов */
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.stat {
+    font-family: 'Pricedown', sans-serif;
+    font-size: 24px;
+    text-shadow: 1px 1px 5px black;
+    display: flex;
+    align-items: center;  /* Центрирование иконки и текста по вертикали */
+}
+
+/* Стили для денег */
+.money {
+    color: #01ce87;  /* Цвет для денег */
+}
+
+/* Стили для брони */
+.armor {
+    color: #b8b8b8;  /* Цвет для брони */
+}
+
+.armor::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #b8b8b8;  /* Цвет иконки */
+    border-radius: 50%;  /* Круглая форма */
+    margin-right: 10px;  /* Отступ между иконкой и текстом */
+    position: relative;
+    border: 2px solid #ffffff; /* Белая граница */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Легкая тень */
+}
+
+/* Стили для здоровья */
+.health {
+    color: #ff92e8;  /* Цвет для здоровья */
+}
+
+.health::before {
+    content: '♥';  /* Символ сердца */
+    font-size: 20px;
+    color: #ff92e8;
+    margin-right: 10px;  /* Отступ между иконкой и текстом */
+}
+
+/* Группа для брони и здоровья */
+.stat-group {
+    display: flex;
+    gap: 20px;  /* Расстояние между броней и здоровьем */
+    align-items: center;  /* Вертикальное выравнивание */
+}
+
+/* Стили для звёзд */
+.stars {
+    position: absolute;
+    top: 250px;  /* Опустил контейнер ниже (были 270px, теперь 290px) */
+    right: 20px;
+    display: flex;
+    flex-direction: row;  /* Меняем с column на row для горизонтального расположения */
+    gap: 15px;  /* Расстояние между звездами */
+    font-size: 50px;
+    color: #65c4f6;
+    z-index: 1000;
+    opacity: 0;
+    animation: showStars 1s forwards;
+}
+
+/* Анимация для появления звёзд */
+@keyframes showStars {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Стили для звезды */
+.star {
+    font-family: 'Pricedown', sans-serif;
+    animation: blink 1s infinite alternate;
+}
+
+/* Анимация мигания звёзд */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
 }
