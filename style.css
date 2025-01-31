@@ -97,22 +97,22 @@ footer {
 /* Стили для часов */
 .clock {
     font-family: 'Pricedown', sans-serif;
-    font-size: 40px;
+    font-size: 30px; /* Сделал шрифт немного меньше */
     color: #56b8f7;
     text-shadow: 2px 2px 5px black;
     position: absolute;
-    top: 80px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 15px;
+    top: 90px;  /* Опустил на 10px */
+    right: 70px;
+    /* Убираем фон */
+    padding: 5px 10px; /* Уменьшаем паддинг, чтобы блок стал компактнее */
     border-radius: 5px;
 }
 
 /* Стили для показателей (деньги, броня, здоровье) */
 .stats {
     position: absolute;
-    top: 180px;  /* Расположение сразу после часов */
-    right: 20px;
+    top: 150px;  /* Расположение сразу после часов */
+    right: 48px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -157,7 +157,7 @@ footer {
 
 .health::before {
     content: '♥';  /* Символ сердца */
-    font-size: 20px;
+    font-size: 40px;
     color: #ff92e8;
     margin-right: 10px;  /* Отступ между иконкой и текстом */
 }
@@ -172,11 +172,11 @@ footer {
 /* Стили для звёзд */
 .stars {
     position: absolute;
-    top: 250px;  /* Опустил контейнер ниже (были 270px, теперь 290px) */
-    right: 20px;
+    top: 230px;  /* Опустил контейнер ниже (были 270px, теперь 290px) */
+    right: 43px;
     display: flex;
     flex-direction: row;  /* Меняем с column на row для горизонтального расположения */
-    gap: 15px;  /* Расстояние между звездами */
+    gap: 10px;  /* Расстояние между звездами */
     font-size: 50px;
     color: #65c4f6;
     z-index: 1000;
