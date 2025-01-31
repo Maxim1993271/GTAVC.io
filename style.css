@@ -227,3 +227,98 @@ footer {
         opacity: 0.3;
     }
 }
+
+
+/* Стили для кнопки воспроизведения MP3 */
+.play-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.btn-play {
+    background-color: #FF00FF; /* Яркий неоновый цвет */
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-play:hover {
+    background-color: #FF66FF;
+    transform: scale(1.1);
+}
+
+.btn-play:active {
+    transform: scale(0.95);
+}
+
+/* Эффект пульсации для кнопки */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.btn-play {
+    animation: pulse 1.5s infinite;
+}
+/* Стили для кнопки воспроизведения MP3 */
+.play-button {
+    position: fixed;
+    bottom: 50px; /* Поднимем кнопку выше, увеличив расстояние от низа */
+    left: 20px;
+    z-index: 1000;
+}
+
+.btn-play {
+    background: linear-gradient(45deg, #ff00ff, #ff66ff); /* Градиентный фон */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px; /* Закругленные углы */
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.5);
+    transition: all 0.3s ease, transform 0.1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-play:hover {
+    background: linear-gradient(45deg, #ff66ff, #ff00ff); /* Инвертированный градиент на ховер */
+    transform: scale(1.1) rotate(5deg); /* Эффект увеличения и поворота */
+    box-shadow: 0 8px 30px rgba(255, 0, 255, 0.7); /* Увеличение тени */
+}
+
+.btn-play:active {
+    transform: scale(0.95) rotate(0deg); /* Легкое сжатие при нажатии */
+}
+
+.btn-play i {
+    font-size: 22px; /* Размер иконки для кнопки */
+    margin-right: 10px;
+}
+
+/* Эффект пульсации для кнопки */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-play {
+    animation: pulse 1.5s infinite; /* Пульсация для кнопки */
+}

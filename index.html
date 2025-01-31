@@ -34,6 +34,12 @@
 
     <div class="content"></div>
 
+    <!-- Кнопка Play для MP3 -->
+    <div class="play-button">
+        <button class="btn-play" onclick="togglePlay()">Play Music</button>
+        <audio id="audioPlayer" src="music/Malibu.mp3"></audio> <!-- Укажите путь к вашему MP3 файлу -->
+    </div>
+
     <div class="button-wrapper">
         <a href="files/GTAVCNE_EN_RU.torrent" class="btn" download aria-label="Скачать торрент GTA Vice City Nextgen Edition">Download GTAVCNE Torrent</a>
     </div>
@@ -48,6 +54,16 @@
 
     <!-- Скрипты -->
     <script>
+        // Функция для воспроизведения и паузы музыки
+        function togglePlay() {
+            var audio = document.getElementById('audioPlayer');
+            if (audio.paused) {
+                audio.play(); // Начать воспроизведение
+            } else {
+                audio.pause(); // Поставить на паузу
+            }
+        }
+        
         // Обновление часов
         function updateClock() {
             const now = new Date();
