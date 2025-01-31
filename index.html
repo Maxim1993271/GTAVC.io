@@ -15,25 +15,34 @@
 
     <title>GTA Vice City Nextgen Edition</title>
     
-    <!-- Фавиконы для разных устройств -->
+    <!-- Фавиконы -->
     <link rel="icon" href="images/Icon.ico" type="image/x-icon">
     <link rel="icon" href="images/Icon-16x16.png" sizes="16x16">
     <link rel="icon" href="images/Icon-32x32.png" sizes="32x32">
     <link rel="icon" href="images/Icon-48x48.png" sizes="48x48">
     <link rel="icon" href="images/Icon-64x64.png" sizes="64x64">
     
-    <link rel="stylesheet" href="style.css"> <!-- Подключаем внешний CSS -->
+    <!-- Подключаем внешний CSS -->
+    <link rel="stylesheet" href="style.css"> 
+
 </head>
 <body>
     <header>
         GTA Vice City Nextgen Edition
     </header>
 
+    <!-- Часы -->
+    <div class="clock" id="clock">00:00</div>
+
     <div class="content">
     </div>
 
     <div class="button-wrapper">
         <a href="files/GTAVCNE_EN_RU.torrent" class="btn" download aria-label="Скачать торрент GTA Vice City Nextgen Edition">Download Torrent</a>
+    </div>
+	
+	<div class="button-wrapper">
+        <a href="https://drive.google.com/file/d/1oFUMxvug-CiE5peKdpptLMjeGc9ESyCh/view?usp=drive_link" class="btn" download aria-label="Скачать торрент GTA Vice City Nextgen Edition">Download Google Drive</a>
     </div>
 
     <footer>
@@ -42,6 +51,19 @@
 
     <!-- Кнопка возврата наверх -->
     <a href="#" id="back-to-top" class="back-to-top-btn" style="display:none;">↑</a>
+
+    <!-- Скрипт обновления часов -->
+    <script>
+        function updateClock() {
+            let now = new Date();
+            let hours = now.getHours().toString().padStart(2, '0');
+            let minutes = now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 
     <!-- Подключаем JS файл -->
     <script src="script.js"></script>
