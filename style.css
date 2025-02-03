@@ -365,17 +365,27 @@ footer {
 }
 
 /* Стили для выборки трека */
-.track-selector {
-    margin-top: 10px;
-}
-
 #trackSelect {
     padding: 10px;
     background-color: #333;
     color: white;
     border: 1px solid #888;
     border-radius: 5px;
+    cursor: pointer; /* Добавляем указатель, чтобы было понятно, что это интерактивный элемент */
 }
+
+#trackSelect:hover {
+    background-color: #444; /* Изменяем фон при наведении */
+    border-color: #666; /* Изменяем цвет границы при наведении */
+}
+
+#trackSelect:focus {
+    outline: none; /* Убираем стандартную рамку фокуса */
+    border-color: #4CAF50; /* Устанавливаем яркую границу при фокусе */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.7); /* Добавляем мягкую тень */
+}
+
+
 
 /*  Стиль для самой кнопки или индикатора громкости */
 .volume-control input[type="range"] {
