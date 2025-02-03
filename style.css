@@ -377,6 +377,7 @@ footer {
     border-radius: 5px;
 }
 
+/*  Стиль для самой кнопки или индикатора громкости */
 .volume-control input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
