@@ -231,216 +231,36 @@ footer {
     }
 }
 
-/* Стили для кнопки воспроизведения MP3 */
-.play-button {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1000;
-}
-
-.btn-play {
-    background-color: #FF00FF; /* Яркий неоновый цвет */
-    color: #FFFFFF;
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
-    transition: all 0.3s ease;
-}
-
-.btn-play:hover {
-    background-color: #FF66FF;
-    transform: scale(1.1);
-}
-
-.btn-play:active {
-    transform: scale(0.95);
-}
-
-/* Эффект пульсации для кнопки */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-.btn-play {
-    animation: pulse 1.5s infinite;
-}
-
-/* Стили для кнопки воспроизведения MP3 */
-.play-button {
-    position: fixed;
-    bottom: 50px; /* Поднимем кнопку выше, увеличив расстояние от низа */
-    left: 20px;
-    z-index: 1000;
-}
-
-.btn-play {
-    background: linear-gradient(45deg, #ff00ff, #ff66ff); /* Градиентный фон */
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 50px; /* Закругленные углы */
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.5);
-    transition: all 0.3s ease, transform 0.1s ease-in-out;
+/* Центрирование радио ссылки под шапкой */
+.radio-link {
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-top: 30px;  /* Отступ сверху */
 }
 
-.btn-play:hover {
-    background: linear-gradient(45deg, #ff66ff, #ff00ff); /* Инвертированный градиент на ховер */
-    transform: scale(1.1) rotate(5deg); /* Эффект увеличения и поворота */
-    box-shadow: 0 8px 30px rgba(255, 0, 255, 0.7); /* Увеличение тени */
+/* Дизайн кнопки радио с неоновыми эффектами */
+.radio-btn {
+    padding: 15px 30px;
+    background-color: #ff33cc; /* Яркий неоновый розовый, в стиле Vice City */
+    color: white; /* Белый текст */
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif; /* Шрифт, подходящий для Vice City */
+    text-transform: uppercase; /* Преобразуем текст в верхний регистр */
+    border-radius: 30px;  /* Скругленные углы для кнопки */
+    border: 2px solid #ff33cc;  /* Яркая обводка */
+    box-shadow: 0 0 20px rgba(255, 51, 204, 0.8); /* Неоновое свечение */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-play:active {
-    transform: scale(0.95) rotate(0deg); /* Легкое сжатие при нажатии */
+/* Эффект при наведении на кнопку */
+.radio-btn:hover {
+    background-color: #ff66cc; /* Немного более светлый оттенок розового */
+    box-shadow: 0 0 30px rgba(255, 102, 204, 1); /* Увеличенное свечение при наведении */
 }
 
-.btn-play i {
-    font-size: 22px; /* Размер иконки для кнопки */
-    margin-right: 10px;
+/* Эффект для фокуса (например, при нажатии) */
+.radio-btn:focus {
+    outline: none; /* Убираем стандартную обводку */
+    box-shadow: 0 0 30px rgba(255, 51, 204, 1), 0 0 10px rgba(255, 51, 204, 0.5); /* Двойное свечение */
 }
-
-/* Эффект пульсации для кнопки */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.btn-play {
-    animation: pulse 1.5s infinite; /* Пульсация для кнопки */
-}
-/* Контейнер для кнопки Play и микшера громкости */
-.play-volume-control {
-    position: fixed;
-    bottom: 20px; /* Располагаем блок внизу */
-    left: 20px; /* Отступ от левого края */
-    text-align: left; /* Выравнивание по левому краю */
-    display: flex;
-    flex-direction: column; /* Элементы будут располагаться вертикально */
-    gap: 15px; /* Добавляем отступ между элементами */
-    width: 250px; /* Ограничиваем ширину блока */
-}
-
-/* Стили для кнопки Play Music */
-.btn-play {
-    background: linear-gradient(45deg, #ff00ff, #ff66ff); /* Градиентный фон */
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 50px; /* Закругленные углы */
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.5);
-    transition: all 0.3s ease, transform 0.1s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn-play:hover {
-    background: linear-gradient(45deg, #ff66ff, #ff00ff); /* Инвертированный градиент на ховер */
-    transform: scale(1.1) rotate(5deg); /* Эффект увеличения и поворота */
-    box-shadow: 0 8px 30px rgba(255, 0, 255, 0.7); /* Увеличение тени */
-}
-
-.btn-play:active {
-    transform: scale(0.95) rotate(0deg); /* Легкое сжатие при нажатии */
-}
-
-/* Стили для выборки трека */
-#trackSelect {
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: 1px solid #888;
-    border-radius: 5px;
-    cursor: pointer; /* Добавляем указатель, чтобы было понятно, что это интерактивный элемент */
-}
-
-#trackSelect:hover {
-    background-color: #444; /* Изменяем фон при наведении */
-    border-color: #666; /* Изменяем цвет границы при наведении */
-}
-
-#trackSelect:focus {
-    outline: none; /* Убираем стандартную рамку фокуса */
-    border-color: #4CAF50; /* Устанавливаем яркую границу при фокусе */
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.7); /* Добавляем мягкую тень */
-}
-
-/*  Стиль для самой кнопки или индикатора громкости */
-.volume-control input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 8px;
-    background: #ddd;
-    border-radius: 5px;
-    outline: none;
-}
-
-.volume-control input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #ff0fff;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.volume-control input[type="range"]:focus {
-    outline: none;
-}
-
-.volume-control input[type="range"]:hover {
-    background: #ccc;
-}
-
- /* Стили для seekbar */
-    #seekbar {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 100%; /* ширина ползунка */
-        height: 10px; /* высота полосы */
-        background: #ddd; /* цвет фона полосы */
-        border-radius: 5px; /* скругление углов */
-    }
-
-    /* Стили для ползунка */
-    #seekbar::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #ff0fff; /* цвет ползунка */
-        cursor: pointer;
-    }
-
-    #seekbar::-moz-range-thumb {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #4CAF50; /* цвет ползунка для Firefox */
-        cursor: pointer;
-    }
