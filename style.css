@@ -12,12 +12,15 @@ body {
 
 /* Стили для header */
 header {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6); /* Темный полупрозрачный фон */
     text-align: center;
     padding: 20px;
     font-size: 28px;
     font-weight: bold;
+    color: #ec6fae; /* Цвет текста: неоново-розовый */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень для текста, чтобы выделить его */
 }
+
 
 /* Основной контент */
 .content {
