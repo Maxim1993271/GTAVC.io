@@ -59,6 +59,12 @@
             <label for="volume">Volume:</label>
             <input type="range" id="volume" min="0" max="1" step="0.01" value="1" onchange="updateVolume()">
         </div>
+
+        <!-- Микшер перемотки -->
+        <div class="seekbar-control">
+            <label for="seekbar">Seek Music:</label>
+            <input type="range" id="seekbar" min="0" max="100" step="0.1" value="0" onchange="updateSeek()">
+        </div>
     </div>
 
     <div class="button-wrapper">
@@ -99,6 +105,15 @@
             var audio = document.getElementById('audioPlayer');
             var volume = document.getElementById('volume').value;
             audio.volume = volume;
+        }
+
+        // Обновление позиции перемотки
+        function updateSeek() {
+            var audio = document.getElementById('audioPlayer');
+            var seekbar = document.getElementById('seekbar');
+            var seekValue = seekbar.value;
+            var duration = audio.duration;
+            audio.currentTime = (seekValue / 100) * duration; // Перемещаем воспроизведение
         }
 
         // Обновление часов

@@ -388,8 +388,6 @@ footer {
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.7); /* Добавляем мягкую тень */
 }
 
-
-
 /*  Стиль для самой кнопки или индикатора громкости */
 .volume-control input[type="range"] {
     -webkit-appearance: none;
@@ -417,3 +415,32 @@ footer {
 .volume-control input[type="range"]:hover {
     background: #ccc;
 }
+
+ /* Стили для seekbar */
+    #seekbar {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%; /* ширина ползунка */
+        height: 10px; /* высота полосы */
+        background: #ddd; /* цвет фона полосы */
+        border-radius: 5px; /* скругление углов */
+    }
+
+    /* Стили для ползунка */
+    #seekbar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #ff0fff; /* цвет ползунка */
+        cursor: pointer;
+    }
+
+    #seekbar::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #4CAF50; /* цвет ползунка для Firefox */
+        cursor: pointer;
+    }
