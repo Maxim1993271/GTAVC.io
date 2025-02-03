@@ -228,7 +228,6 @@ footer {
     }
 }
 
-
 /* Стили для кнопки воспроизведения MP3 */
 .play-button {
     position: fixed;
@@ -378,12 +377,29 @@ footer {
     border-radius: 5px;
 }
 
-/* Стили для микшера громкости */
-.volume-control {
-    margin-top: 10px;
+.volume-control input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
 }
 
-#volume {
-    width: 100%; /* Чтобы ползунок занимал всю ширину */
-    margin-top: 5px;
+.volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ff0fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-control input[type="range"]:focus {
+    outline: none;
+}
+
+.volume-control input[type="range"]:hover {
+    background: #ccc;
 }
