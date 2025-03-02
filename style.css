@@ -1,3 +1,9 @@
+/* Подключение шрифта Pricedown */
+@font-face {
+    font-family: 'Pricedown';
+    src: url('pricedown.ttf') format('truetype'); /* Подключаем шрифт GTA */
+}
+
 /* Основные стили для body */
 body {
     margin: 0;
@@ -20,7 +26,6 @@ header {
     color: #ec6fae; /* Цвет текста: неоново-розовый */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень для текста, чтобы выделить его */
 }
-
 
 /* Основной контент */
 .content {
@@ -74,29 +79,6 @@ footer {
     padding: 10px;
 }
 
-/* Адаптивные стили для мобильных устройств */
-@media (max-width: 768px) {
-    header {
-        font-size: 22px;
-        padding: 15px;
-    }
-
-    .btn {
-        font-size: 18px;
-        padding: 12px 25px;
-    }
-
-    .content {
-        padding: 10px;
-    }
-}
-
-/* Подключение шрифта Pricedown */
-@font-face {
-    font-family: 'Pricedown';
-    src: url('pricedown.ttf') format('truetype'); /* Подключаем шрифт GTA */
-}
-
 /* Стили для часов */
 .clock {
     font-family: 'Pricedown', sans-serif;
@@ -106,7 +88,6 @@ footer {
     position: absolute;
     top: 90px;  /* Опустил на 10px */
     right: 70px;
-    /* Убираем фон */
     padding: 5px 10px; /* Уменьшаем паддинг, чтобы блок стал компактнее */
     border-radius: 5px;
 }
@@ -187,10 +168,10 @@ footer {
 /* Стили для звёзд */
 .stars {
     position: absolute;
-    top: 230px;  /* Опустил контейнер ниже (были 270px, теперь 290px) */
+    top: 230px;  /* Опустил контейнер ниже */
     right: 43px;
     display: flex;
-    flex-direction: row;  /* Меняем с column на row для горизонтального расположения */
+    flex-direction: row;  /* Горизонтальное расположение */
     gap: 10px;  /* Расстояние между звездами */
     font-size: 50px;
     color: #65c4f6;
@@ -263,4 +244,78 @@ footer {
 .radio-btn:focus {
     outline: none; /* Убираем стандартную обводку */
     box-shadow: 0 0 30px rgba(255, 51, 204, 1), 0 0 10px rgba(255, 51, 204, 0.5); /* Двойное свечение */
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 576px) {
+    header {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .button-wrapper {
+        padding-bottom: 10px;
+    }
+
+    footer {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .clock {
+        font-size: 20px;
+        top: 70px;
+        right: 10px;
+        padding: 3px 6px;
+    }
+
+    .stats {
+        top: 100px;
+        right: 10px;
+        gap: 5px;
+    }
+
+    .stat {
+        font-size: 18px;
+    }
+
+    .armor::before {
+        width: 16px;
+        height: 18px;
+        margin-right: 5px;
+    }
+
+    .health::before {
+        font-size: 24px;
+        margin-right: 5px;
+    }
+
+    .stat-group {
+        gap: 10px;
+    }
+
+    .stars {
+        top: 180px;
+        right: 10px;
+        font-size: 30px;
+        gap: 5px;
+    }
+
+    .radio-link {
+        margin-top: 15px;
+    }
+
+    .radio-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
 }
